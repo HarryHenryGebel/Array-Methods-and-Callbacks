@@ -1,4 +1,4 @@
-import { fifaData } from './fifa.js';
+// import { fifaData } from './fifa.js';
 console.log(fifaData);
 
 console.log('its working');
