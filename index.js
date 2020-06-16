@@ -122,12 +122,12 @@ function getCountryWins(data, teamInitials) {
     // if teamInitials matches the winner increment the accumulator,
     // otherwise return the accumulator unaltered
     if (winnerInitials === teamInitials)
-      return acc++;
+      return acc + 1;
     else
       return acc;
   }
 
-
+  return getFinals(data).reduce(reducer, 0);
 };
 
 /* Stretch 3: Write a function called getGoals() that accepts a parameter `data` and returns the team with the most goals score per appearance (average goals for) in the World Cup finals */
