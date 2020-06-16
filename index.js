@@ -39,15 +39,15 @@ function getFinals(data) {
   return data.filter(match => match.Stage === "Final");
 };
 
-/* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
+/* Task 3: Implement a higher-order function called `getYears` that
+ * accepts the callback function `getFinals`, and returns an array
+ * called `years` containing all of the years in the dataset */
 
-function getYears(/* code here */) {
-
-    /* code here */
-
+function getYears(data, getFinals) {
+  // pretty sure arrays don't have a name property. who is writing
+  // these specifications?
+  return getFinals(data).map(match => match.Year);
 };
-
-getYears();
 
 /* Task 5: Implement a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */
 
