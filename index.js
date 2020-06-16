@@ -111,14 +111,24 @@ function getAverageGoals(data) {
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
+function getCountryWins(data, teamInitials) {
+  function reducer(acc, match) {
+    let winnerInitials;
+    if (match["Home Team Goals"] > match["Away Team Goals"])
+      winnerInitials = match["Home Team Initials"];
+    else
+      winnerInitials = match["Away Team Initials"];
 
-    /* code here */
+    // if teamInitials matches the winner increment the accumulator,
+    // otherwise return the accumulator unaltered
+    if (winnerInitials === teamInitials)
+      return acc++;
+    else
+      return acc;
+  }
+
 
 };
-
-getCountryWins();
-
 
 /* Stretch 3: Write a function called getGoals() that accepts a parameter `data` and returns the team with the most goals score per appearance (average goals for) in the World Cup finals */
 
