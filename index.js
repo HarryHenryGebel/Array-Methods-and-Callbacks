@@ -85,12 +85,23 @@ function getWinnersByYear(getWinners, getYears) {
   return strings;
 };
 
-/* Task 7: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
+/* Task 7: Write a function called `getAverageGoals` that accepts a
+ * parameter `data` and returns the the average number of home team
+ * goals and away team goals scored per match (Hint: use .reduce and
+ * do this in 2 steps) */
 
-function getAverageGoals(/* code here */) {
+function getAverageGoals(data) {
+  // function t (acc, match) {
+  //   return acc + match["Home Team Goals"];
+  // }
+  const games = data.length;
+  const homeAverageGoals = data.reduce(
+    (acc, match) => acc + match["Home Team Goals"], 0) / games;
+  const awayAverageGoals = data.reduce(
+    (acc, match) => acc + match["Away Team Goals"], 0) / games;
 
-    /* code here */
-
+  return {homeAverageGoals: homeAverageGoals.toFixed(2),
+          awayAverageGoals: awayAverageGoals.toFixed(2)};
 };
 
 getAverageGoals();
